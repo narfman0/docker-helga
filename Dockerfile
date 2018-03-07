@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-EXPOSE 6667
-
 RUN apt update
 RUN apt install -y \
 	git \
