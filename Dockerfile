@@ -21,7 +21,6 @@ RUN pip install service_identity helga
 
 ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 
-RUN sed -i -s 's/^bind_ip/#bind_ip/' /etc/mongodb.conf && \
-    service mongodb restart
+RUN sed -i -s 's/^bind_ip/#bind_ip/' /etc/mongodb.conf
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
