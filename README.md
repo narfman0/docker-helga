@@ -19,7 +19,7 @@ You might want to use a Dockerfile to extend this to add plugins and config. Som
 like:
 
 ```
-FROM helga:latest
+FROM narfman0/docker-helga:latest
 
 RUN pip install \
     helga-quip \
