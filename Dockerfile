@@ -19,8 +19,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN pip install --upgrade pip
 RUN pip install service_identity helga
 
-RUN sed -i -s 's/^bind_ip/#bind_ip/' /etc/mongodb.conf && \
-    service mongodb restart && \
-    until nc -z localhost 27017; do sleep 1; done # wait for mongo to be listening
+ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 
-ENTRYPOINT ["/usr/local/bin/helga"]
+RUN sed -i -s 's/^bind_ip/#bind_ip/' /etc/mongodb.conf && \
+    service mongodb restart
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
