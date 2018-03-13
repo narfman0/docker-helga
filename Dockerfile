@@ -23,4 +23,6 @@ ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN sed -i -s 's/^bind_ip/#bind_ip/' /etc/mongodb.conf
 
+VOLUME /var/lib/mongodb
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

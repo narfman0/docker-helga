@@ -10,9 +10,6 @@ Build locally with `docker build . -t helga`
 
 * You will need to add your settings.py, install plugins, and deal with db dumps/loads
 
-* You will probably want to run the container with a volume set up to mount /var/lib/mongodb
-  to persist the database
-
 ## Extending
 
 You might want to use a Dockerfile to extend this to add plugins and config. Something
